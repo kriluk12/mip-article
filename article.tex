@@ -13,9 +13,9 @@
 \usepackage{cite}
 %\usepackage{times}
 
-\pagestyle{headings}
+\pagestyle{plain}
 
-\title{Sekvenčné UML Diagramy\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2021/22, vedenie: Ing. Ján Lúčanský}} % meno a priezvisko vyučujúceho na cvičeniach
+\title{Sekvenčné UML Diagramy\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2021/22, vedenie: Ing. Ján Lúčanský}}
 
 \author{Kristián Lukacsovics\\[2pt]
     {\small Slovenská technická univerzita v Bratislave}\\
@@ -23,18 +23,17 @@
     {\small \texttt{xlukacsovics@stuba.sk}}
     }
 
-\date{\small 3.11.2021} % upravte
+\date{\small 4.11.2021} % upravte
 
+\providecommand{\abstr}[1]{\textbf{\textit{Abstrakt---}} #1}
 \providecommand{\keywords}[1]{\textbf{\textit{Klúčové slová---}} #1}
 
 \begin{document}
 
 \maketitle
 
-\begin{abstract}
-Tento článok sa zameriava na UML diagramy, konkrétne na sekvenčné UML diagramy\ldots
-\end{abstract}
-\keywords{UML, Sekvenčné diagramy}
+\abstr{Tento článok sa zameriava na UML diagramy, konkrétne na sekvenčné UML diagramy\ldots\newline}
+\indent\keywords{UML, Sekvenčné diagramy}
 
 \section{Úvod}
 
@@ -51,21 +50,19 @@ na vrchu tejto čiary je meno objektu. Tieto vertikálne čiary značia aj dĺž
 
 \noindent Objekty si môžu poslať správy aj pre seba. Takéto správy sa nazývajú reflexívne správy. 
 Ako už bolo spomenuté, poradie týchto správ je dôležité. Zmena poradia môže zmeniť korektnosť programu
-v niektorých prípadoch. 
+v niektorých prípadoch.  \newline
 
-
-
-\section{Nejaká časť} \label{nejaka}
-
-Z obr.~\ref{f:rozhod} je všetko jasné. 
+\noindent Na obr. 1 môžeme vidieť veľmi jednoduchú ukážku sekvenčného UML diagramu. \newpage
 
 \begin{figure*}[tbh]
 \centering
-%\includegraphics[scale=1.0]{test_diagram.pdf}
-Aj text môže byť prezentovaný ako obrázok. Stane sa z neho označný plávajúci objekt. Po vytvorení diagramu zrušte znak \texttt{\%} pred príkazom \verb|\includegraphics| označte tento riadok ako komentár (tiež pomocou znaku \texttt{\%}).
-\caption{Rozhodujúci argument.}
-\label{f:rozhod}
+\includegraphics[scale=0.7]{seq_diagram.pdf}
+\caption{Ukážka sekvenčného diagramu.}
 \end{figure*}
+
+\section{Nejaká časť} \label{nejaka}
+
+
 
 
 
