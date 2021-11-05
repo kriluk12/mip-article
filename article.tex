@@ -23,7 +23,7 @@
     {\small \texttt{xlukacsovics@stuba.sk}}
     }
 
-\date{\small 4.11.2021} % upravte
+\date{\small 5.11.2021} % upravte
 
 \providecommand{\abstr}[1]{\textbf{\textit{Abstrakt---}} #1}
 \providecommand{\keywords}[1]{\textbf{\textit{Klúčové slová---}} #1}
@@ -32,15 +32,17 @@
 
 \maketitle
 
-\abstr{Tento článok sa zameriava na UML diagramy, konkrétne na sekvenčné UML diagramy\ldots\newline}
-\indent\keywords{UML, Sekvenčné diagramy}
+\abstr{Tento článok sa zameriava na opis sekvenčných UML diagramov\ldots\newline}
+\indent\keywords{Unified Modeling Language, Sekvenčný diagram, Objekt, Správa}
 
 \section{Úvod}
-
+UML, celým názvom Unified Modeling Language, je objektovo-orientovaný modelovací jazyk pre softvérové programy. \cite{eriksson98}
 Existuje niekoľko typov UML diagramov, sekvenčné diagramy sú jedným z nich. Všetky tieto diagramy slúžia na
 abstraktný opis správania sa jednotlivých častí počítačového programu. Každý jeden typ sa sústreďuje na opis
 rôznych vlastností kódu. Cieľom sekvenčných diagramov je opis interakcie medzi objektami programu, s tým, že sa
-berie ohľad na poradie vykonávaného postupu. \newline
+berie ohľad na poradie vykonávaného postupu. \cite{petraq14}
+
+\section{Komunikácia objektov} \label{nejaka}
 
 \noindent Objekty si navzájom posielajú správy (požiadavky) medzi sebou. Tieto
 správy medzi objektami sa v diagrame zaznačia ako horizontálne šípky. Smer týchto šípok určuje odosielateľa a
@@ -50,9 +52,7 @@ na vrchu tejto čiary je meno objektu. Tieto vertikálne čiary značia aj dĺž
 
 \noindent Objekty si môžu poslať správy aj pre seba. Takéto správy sa nazývajú reflexívne správy. 
 Ako už bolo spomenuté, poradie týchto správ je dôležité. Zmena poradia môže zmeniť korektnosť programu
-v niektorých prípadoch.  \newline
-
-\noindent Na obr. 1 môžeme vidieť veľmi jednoduchú ukážku sekvenčného UML diagramu. \newpage
+v niektorých prípadoch. \cite{petraq14}  \newline
 
 \begin{figure*}[tbh]
 \centering
@@ -60,64 +60,24 @@ v niektorých prípadoch.  \newline
 \caption{Ukážka sekvenčného diagramu.}
 \end{figure*}
 
-\section{Nejaká časť} \label{nejaka}
+\noindent Na obr. 1 môžeme vidieť veľmi jednoduchú ukážku sekvenčného UML diagramu.
 
+\section{Využitie}
+Cieľom UML diagramov, vo všeobecnosti, je poskytnúť ucelenejšie a jednoduchšie zobrazenie fungovania softvéru, tak, aby tomu porozumeli aj laici. 
+Problém je v tom, že sa väčšinou softvér dizajnuje najprv ako UML diagram, a až potom sa píše samotný kód programu. Keďže UML diagramy používajú objektovo-orientovaný princíp, tak aj kód programu musí byť písaný objektovo-orientovane. \cite{eriksson98}
+Ja, osobne, nie som veľký zastánca objektovo-orientovaného programovania. Objektovo-orientované programovanie ma skôr spomaluje, preto radšej programujem procedurálne. Kvôli tomu, že UML diagramy sú úzko späté so štýlom programovania, som nútený programovať v paradigme, ktorá 
+ma robí menej efektívnym. Preto je, podľa mňa, lepšie nemodelovať kód programu podľa nadizajnovaného diagramu, ale robiť to opačne. Fungovanie programu by nemalo mať vplyv na to, akým spôsobom ten kód bol napísaný. Objekty v diagrame nemusia reprezentovať explicitne objekty v kóde, môžu reprezentovať 
+iné abstraktné podsystémy programu. Tento spôsob zaručuje aj to, že diagramy môžu byť menej abstraktné, nemusia sa riadiť princípom objektového orientovania. Menej abstraktné diagramy môžu byť užitočné pre programátorov, ktorí pracujú na nižšej úrovni, bližšie k hardvéru. \newline 
 
+\noindent Sekvenčné diagramy sa na tento viacej flexibilnejší postup tvorenia diagramov hodia najviac, podľa mňa. Keďže zachytávajú životnosť objektov a poradie operácií, mnoho operácií sa dá zapísať paralelne. Paralelný zápis môže byť užitočný pre programátorov, keďže aj počítač funguje paralelne. 
+Program sa tým pádom môže modelovať podľa toho, ako počítač vykonáva operácie, napr. pomocou vlákien procesora alebo pomocou SIMD registrov procesora. Takýto model môže byť užitočný pre programátorov, ktorí sa sústreďujú na optimalizovanie kódu. 
+Takisto sa programy môžu modelovať viac abstraktne ako doteraz, akurát s tým, že výsledné diagramy korektne opíšu fungovanie programu bez toho, aby mali vplyv na štýl písania kódu. \newline
 
+\section{Ďalšia časť}
+\ldots
 
-
-\section{Iná časť} \label{ina}
-
-Základným problémom je teda\ldots{} Najprv sa pozrieme na nejaké vysvetlenie (časť~\ref{ina:nejake}), a potom na ešte nejaké (časť~\ref{ina:nejake}).\footnote{Niekedy môžete potrebovať aj poznámku pod čiarou.}
-
-Môže sa zdať, že problém vlastne nejestvuje\cite{Coplien:MPD}, ale bolo dokázané, že to tak nie je~\cite{Czarnecki:Staged, Czarnecki:Progress}. Napriek tomu, aj dnes na webe narazíme na všelijaké pochybné názory\cite{PLP-Framework}. Dôležité veci možno \emph{zdôrazniť kurzívou}.
-
-
-\subsection{Nejaké vysvetlenie} \label{ina:nejake}
-
-Niekedy treba uviesť zoznam:
-
-\begin{itemize}
-\item jedna vec
-\item druhá vec
-    \begin{itemize}
-    \item x
-    \item y
-    \end{itemize}
-\end{itemize}
-
-Ten istý zoznam, len číslovaný:
-
-\begin{enumerate}
-\item jedna vec
-\item druhá vec
-    \begin{enumerate}
-    \item x
-    \item y
-    \end{enumerate}
-\end{enumerate}
-
-
-\subsection{Ešte nejaké vysvetlenie} \label{ina:este}
-
-\paragraph{Veľmi dôležitá poznámka.}
-Niekedy je potrebné nadpisom označiť odsek. Text pokračuje hneď za nadpisom.
-
-
-
-\section{Dôležitá časť} \label{dolezita}
-
-
-
-
-\section{Ešte dôležitejšia časť} \label{dolezitejsia}
-
-
-
-
-\section{Záver} \label{zaver} % prípadne iný variant názvu
-
-\newpage
+\section{Záver}
+\ldots
 
 %\acknowledgement{Ak niekomu chcete poďakovať\ldots}
 
