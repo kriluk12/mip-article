@@ -23,7 +23,7 @@
     {\small \texttt{xlukacsovics@stuba.sk}}
     }
 
-\date{\small 14.12.2021} % upravte
+\date{\small 14.12.2021}
 
 \providecommand{\abstr}[1]{\textbf{\textit{Abstrakt---}} #1}
 \providecommand{\keywords}[1]{\textbf{\textit{Klúčové slová---}} #1}
@@ -36,67 +36,97 @@
 \indent\keywords{Unified Modeling Language, Sekvenčný diagram, Objekt, Správa}
 
 \section{Úvod}
-UML, celým názvom Unified Modeling Language, je objektovo-orientovaný modelovací jazyk pre softvérové programy. \cite{eriksson98}
-Existuje niekoľko typov UML diagramov, sekvenčné diagramy sú jedným z nich. Všetky tieto diagramy slúžia na
-abstraktný opis správania sa jednotlivých častí počítačového programu. Každý jeden typ sa sústreďuje na opis
-rôznych vlastností kódu. Cieľom sekvenčných diagramov je opis interakcie medzi objektami programu, s tým, že sa
-berie ohľad na poradie vykonávaného postupu. \cite{petraq14}
+\ldots
 
 \section{Úroveň využitia}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque pretium urna, non convallis ante consequat nec. 
-Quisque nec tellus a est ornare hendrerit eu vel nisl. Sed aliquet augue nisi, in porttitor urna ultrices sed. 
-Aliquam ultrices sagittis quam ut maximus. Sed rutrum, dui vitae pulvinar convallis, ex odio maximus justo, id finibus ligula turpis non elit. 
-Cras imperdiet finibus augue vel fermentum. Maecenas ac nibh ullamcorper, tempor magna et, congue elit. \newline
+UML, celým názvom Unified Modeling Language, je objektovo-orientovaný modelovací jazyk, ktorý slúži na modelovanie počítačových programov. \cite{eriksson98}
+Existuje niekoľko typov UML diagramov, sekvenčné diagramy sú jedným z nich. Všetky tieto diagramy slúžia na
+abstraktný opis správania sa jednotlivých častí počítačového programu. Každý jeden typ sa sústreďuje na opis
+rôznych vlastností kódu. \cite{petraq14} \newline
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque pretium urna, non convallis ante consequat nec. 
-Quisque nec tellus a est ornare hendrerit eu vel nisl. Sed aliquet augue nisi, in porttitor urna ultrices sed.
-Aliquam ultrices sagittis quam ut maximus. Sed rutrum, dui vitae pulvinar convallis, ex odio maximus justo, id finibus ligula turpis non elit. 
-Cras imperdiet finibus augue vel fermentum. Maecenas ac nibh ullamcorper, tempor magna et, congue elit.
+\noindent Avšak, niektoré typy týchto diagramov sa využívajú v praxi viacej ako ostatné. Pri zistení popularity UML diagramov sa spravila zbierka niekoľko desiatok náučných
+materiálov zamerané na UML. Medzi tieto materiály boli zaradené knihy, pomocné nástroje, kurzy a online tutoriály. Následne sa podľa počtu meteriálov, v ktorých boli spomenuté alebo použité
+jednotlivé typy diagramov, percentuálne vyhodnotila úroveň využitia. Sekvenčné diagramy boli spomenuté alebo použité v 97 percentách materiálov, čím patrili medzi tie populárnejšie diagramy, spomedzi všetkých skúmaných diagramov. \cite{reggio13} \newline
+
+\noindent Jednotlivé údaje z tejto štúdie môžeme vidieť na obr.~\ref{tab} .
 
 \begin{figure*}[tbh]
 \centering
 \includegraphics[scale=0.5]{tab.pdf}
 \caption{Úroveň využitia jednotlivých typov UML diagramov. \cite{reggio13}}
+\label{tab}
 \end{figure*}
 
 \section{Komunikácia objektov}
 
-\noindent Objekty si navzájom posielajú správy (požiadavky) medzi sebou. Tieto
-správy medzi objektami sa v diagrame zaznačia ako horizontálne šípky. Smer týchto šípok určuje odosielateľa a
-príjemcu (na strane, kde je šípka, je príjemca). Samotné objekty sa značia ako vertikálne čiary, s tým, že
-na vrchu tejto čiary je meno objektu. Tieto vertikálne čiary značia aj dĺžku života objektov. Úseky, kde sú
-čiary prerušované, značia časové úseky programu, kde dané objekty ešte neboli vytvorené, resp. už boli odstránené. \newline
+Ako už bolo spomenuté, UML diagramy sú objektovo-orientované, z čoho vyplýva, že základný prvok týchto diagramov je objekt. 
+Medzi objektami nastávajú rôzne interakcie, ktorými vieme vyjadriť fungovanie programu, ktorý modelujeme. 
+Pod interakciami môžeme rozumieť aj výmenu správ medzi objektami, pomocou ktorých medzi sebou komunikujú.
+V prípade sekvenčných diagramov, sú tieto správy vyjadrené postupne ako sa udejú. Vďaka tomu je možné vyjadriť aj dĺžku života objektov. 
+Ak daný objekt potrebuje, po prvýkrát, odoslať alebo obdržať správu, tento moment môžeme brať ako vytvorenie objektu. Podobným spôsobom vieme určiť aj moment odstránenia objektu.   
+Treba dbať aj na poradie správ. Zmena poradia môže zmeniť korektnosť programu v niektorých prípadoch. \cite{petraq14} \newline
 
-\noindent Objekty si môžu poslať správy aj pre seba. Takéto správy sa nazývajú reflexívne správy. 
-Ako už bolo spomenuté, poradie týchto správ je dôležité. Zmena poradia môže zmeniť korektnosť programu
-v niektorých prípadoch. \cite{petraq14}
+\noindent Správy sa v diagrame zaznačia ako horizontálne šípky. Smer týchto šípok určuje odosielateľa a
+príjemcu správy (na strane, kde je šípka, je príjemca). Objekty si môžu poslať správy aj pre seba. Takéto správy sa nazývajú reflexívne správy. \cite{petraq14} 
+Ak sa pošle správa s požiadavkou, návratová správa s odpoveďou od príjemcu požiadavky sa značí bodkovanou čiarou. 
+Návratové správy majú otvorený hrot šípky narozdiel od ostatných správ, ktoré majú hrot zaplnený čiernou farbou. \cite{booch00}\newline
 
-%\noindent Na obr. 2 môžeme vidieť veľmi jednoduchú ukážku sekvenčného UML diagramu.
+\noindent Samotné objekty sa značia ako obdĺžniky, do ktorých sa napíše meno objektu a meno inštancie objektu. Pod tieto obdĺžniky sa zaznačí vertikálna prerušovaná čiara. 
+Úseky tejto čiary, kde je objekt aktívny (objekt bol vytvorený a nebol ešte odstránený) sa značí prázdnym obdĺžnikom. Správy sa kreslia zo stien týchto obdĺžnikov. \cite{booch00} \newline
+
+\noindent Všetky tieto označenia pre objekty a správy sa ohraničia obdĺžnikom, ktorý slúži na oddelenie jednotlivých diagramov.
+Do ľavého horného rohu tohto obdĺžnika sa píše meno diagramu. \cite{booch00}
+Na obr.~\ref{diag1} je jednoduchá ukážka sekvenčného diagramu.
 
 \begin{figure*}[tbh]
 \centering
 \includegraphics[scale=0.8]{simple_diag.pdf}
 \caption{Ukážka sekvenčného diagramu.\cite{booch00}}
+\label{diag1}
 \end{figure*}
 
-\section{Ďalšia časť}
+\section{Zložitejšie koncepty}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque pretium urna, non convallis ante consequat nec. 
-Quisque nec tellus a est ornare hendrerit eu vel nisl. Sed aliquet augue nisi, in porttitor urna ultrices sed.
-Aliquam ultrices sagittis quam ut maximus. Sed rutrum, dui vitae pulvinar convallis, ex odio maximus justo, id finibus ligula turpis non elit. 
-Cras imperdiet finibus augue vel fermentum. Maecenas ac nibh ullamcorper, tempor magna et, congue elit.
+Pomocou sekvenčných diagramov vieme vyjadriť aj zložitejšie koncepty, ako sú napríklad cykly a podmienky. Na vyjadrenie týchto konceptov môžeme použiť tzv. kombinované fragmenty.
+Kombinované fragmenty slúžia na zoskupenie správ podľa nejakého kritéria. 
+Kombinované fragmenty sa v diagrame značia rovnako ako sa značia oddelenia diagramov. Správy sa ohraničia obdĺžnikom a do ľavého horného rohu obdĺžnika sa napíše meno 
+kombinovaného fragmentu. Existuje niekoľko typov kombinovaných fragmentov, ako sú napr. cykly, voľby a alternatívy. \cite{booch00} \newline
+
+\noindent Cykly zaznačujeme do diagramov ich anglickým názvom „loop". Pod meno sa do hranatých zátvoriek píše podmienka, ktorá sa overí na začiatku každej iterácie cyklu. 
+Ak je podmienka splnená, spustí sa nová iterácia. 
+Napr., ak by sme mali cyklus, v ktorom máme prejsť celý jeden spájaný zoznam, podmienka cyklu by bola zapísaná takto: „[node != NULL]". \cite{booch00} \newline
+
+\noindent Pomocou volieb modelujeme vetvenie programu. Podmienka vetvenia sa značí rovnako ako podmienka pri cykloch. 
+Označujú sa menom „opt" (skratka pre angl. slovo „options"). \cite{booch00} \newline
+
+\noindent Alternatívy, takisto ako voľby, modelujú vetvenie programu, ale modelujú také vetvenie, v ktorom sa používa viac než jedna podmienka. 
+Označujú sa menom „alt" (skratka pre angl. slovo „alternatives"). 
+Príklad modelu alternatívy môžeme vidieť na obr.~\ref{diag2} . \cite{booch00} \newline
+
+\noindent forsen
 
 \begin{figure*}[tbh]
 \centering
 \includegraphics[scale=0.8]{cond_diag.pdf}
-\caption{Modelovanie podmienok. \cite{booch00}}
+\caption{Model programu s alternatívou. \cite{booch00}}
+\label{diag2}
 \end{figure*}
+
+\section{Reakcia na témy z prednášok}
+\paragraph{Spoločenské súvislosti.}
+\ldots
+
+\paragraph{Historické súvislosti.}
+\ldots
+
+\paragraph{Technológia a ľudia.}
+\ldots
+
+\paragraph{Udržateľnosť a etika.}
+\ldots
 
 \section{Záver}
 \ldots
-
-%\acknowledgement{Ak niekomu chcete poďakovať\ldots}
-
 
 % týmto sa generuje zoznam literatúry z obsahu súboru literature.bib podľa toho, na čo sa v článku odkazujete
 \bibliography{literature}
