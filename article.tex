@@ -32,14 +32,21 @@
 
 \maketitle
 
-\abstr{Tento článok sa zameriava na opis sekvenčných UML diagramov\ldots\newline}
-\indent\keywords{Unified Modeling Language, Sekvenčný diagram, Objekt, Správa}
+\abstr{UML diagramy patria medzi najznámejšie typy diagramov na modelovania počítačových programov. 
+Tento článok sa venuje sekvenčným UML diagramom. Porovnáva ich s ostatnými typmi UML diagramov. Opisuje ich fungovanie aj modelovanie niektorých zložitejších konceptov z programovania. 
+Na záver, reaguje na niektoré témy s prednášok. \newline}
+\indent\keywords{Unified Modeling Language, Sekvenčný diagram, Objekt, Správa, Kombinovaný fragment, Cyklus, Voľba, Alternatíva}
 
 \section{Úvod}
-\ldots
-
-\section{Úroveň využitia}
 UML, celým názvom Unified Modeling Language, je objektovo-orientovaný modelovací jazyk, ktorý slúži na modelovanie počítačových programov. \cite{eriksson98}
+Tento článok sa sústreďuje, konkrétne, na sekvenčné UML diagramy. 
+V časti~\ref{usage}sú porovnávané s ostatnými typmi UML diagramov.
+Opis ich fungovania sa nachádza v časti~\ref{comm} .
+Časť~\ref{frag} opisuje spôsoby modelovania komplexnejších konceptov z programovania.
+Pre reakciu na témy z prednášok je vyhradená časť~\ref{lect} .
+Záver článku je v časti~\ref{end} .
+
+\section{Úroveň využitia} \label{usage}
 Existuje niekoľko typov UML diagramov, sekvenčné diagramy sú jedným z nich. Všetky tieto diagramy slúžia na
 abstraktný opis správania sa jednotlivých častí počítačového programu. Každý jeden typ sa sústreďuje na opis
 rôznych vlastností kódu. \cite{petraq14} \newline
@@ -57,7 +64,7 @@ jednotlivé typy diagramov, percentuálne vyhodnotila úroveň využitia. Sekven
 \label{tab}
 \end{figure*}
 
-\section{Komunikácia objektov}
+\section{Komunikácia objektov} \label{comm}
 
 Ako už bolo spomenuté, UML diagramy sú objektovo-orientované, z čoho vyplýva, že základný prvok týchto diagramov je objekt. 
 Medzi objektami nastávajú rôzne interakcie, ktorými vieme vyjadriť fungovanie programu, ktorý modelujeme. 
@@ -85,7 +92,7 @@ Na obr.~\ref{diag1} je jednoduchá ukážka sekvenčného diagramu.
 \label{diag1}
 \end{figure*}
 
-\section{Zložitejšie koncepty}
+\section{Kombinované fragmenty} \label{frag}
 
 Pomocou sekvenčných diagramov vieme vyjadriť aj zložitejšie koncepty, ako sú napríklad cykly a podmienky. Na vyjadrenie týchto konceptov môžeme použiť tzv. kombinované fragmenty.
 Kombinované fragmenty slúžia na zoskupenie správ podľa nejakého kritéria. 
@@ -103,7 +110,8 @@ Označujú sa menom „opt" (skratka pre angl. slovo „options"). \cite{booch00
 Označujú sa menom „alt" (skratka pre angl. slovo „alternatives"). 
 Príklad modelu alternatívy môžeme vidieť na obr.~\ref{diag2} . \cite{booch00} \newline
 
-\noindent forsen
+\noindent Kombinované fragmenty zvyšujú flexibilitu sekvenčných diagramov. Môžeme nimi modelovať nízko-úrovňové, ale aj abstraktnejšie koncepty z programovania. 
+Takisto sú vhodné na modelovanie komplexnejšej logiky programu.  
 
 \begin{figure*}[tbh]
 \centering
@@ -112,7 +120,7 @@ Príklad modelu alternatívy môžeme vidieť na obr.~\ref{diag2} . \cite{booch0
 \label{diag2}
 \end{figure*}
 
-\section{Reakcia na témy z prednášok}
+\section{Reakcia na témy z prednášok} \label{lect}
 \paragraph{Spoločenské súvislosti.}
 \ldots
 
@@ -125,8 +133,9 @@ Príklad modelu alternatívy môžeme vidieť na obr.~\ref{diag2} . \cite{booch0
 \paragraph{Udržateľnosť a etika.}
 \ldots
 
-\section{Záver}
-\ldots
+\section{Záver} \label{end}
+Sekvenčné UML diagramy patria medzi najpopulárnejšie typy UML diagramov. Sú veľmi flexibilné a ľahko sa nimi modeluje logika programu. 
+Existuje mnoho náučných materiálov a rôznych nástrojov na tvorbu sekvenčných diagramov, vďaka ktorým sú tieto diagramy veľmi prístupné na použitie. 
 
 % týmto sa generuje zoznam literatúry z obsahu súboru literature.bib podľa toho, na čo sa v článku odkazujete
 \bibliography{literature}
